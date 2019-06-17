@@ -1,6 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
-Namespace CustomLabelsWithaLargeAmountOfData
+﻿Namespace CustomLabelsWithaLargeAmountOfData
 	Partial Public Class Form1
 		''' <summary>
 		''' Required designer variable.
@@ -50,35 +48,33 @@ Namespace CustomLabelsWithaLargeAmountOfData
 			Me.chartControl1.DataAdapter = Me.productsTableAdapter
 			Me.chartControl1.DataSource = Me.productsBindingSource
 			xyDiagram1.AxisX.Label.Angle = 45
-			xyDiagram1.AxisX.Label.Antialiasing = True
-			xyDiagram1.AxisX.Range.ScrollingRange.SideMarginsEnabled = False
-			xyDiagram1.AxisX.Range.SideMarginsEnabled = False
+			xyDiagram1.AxisX.Label.EnableAntialiasing = DevExpress.Utils.DefaultBoolean.True
+			xyDiagram1.AxisX.VisualRange.AutoSideMargins = False
 			xyDiagram1.AxisX.VisibleInPanesSerializable = "-1"
-			xyDiagram1.AxisY.Range.ScrollingRange.SideMarginsEnabled = True
-			xyDiagram1.AxisY.Range.SideMarginsEnabled = True
 			xyDiagram1.AxisY.VisibleInPanesSerializable = "-1"
 			Me.chartControl1.Diagram = xyDiagram1
 			Me.chartControl1.Dock = System.Windows.Forms.DockStyle.Fill
-			Me.chartControl1.Legend.Visible = False
+			Me.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False
 			Me.chartControl1.Location = New System.Drawing.Point(0, 0)
 			Me.chartControl1.Name = "chartControl1"
 			series1.ArgumentDataMember = "ProductName"
-			series1.DataFilters.ClearAndAddRange(New DevExpress.XtraCharts.DataFilter() { New DevExpress.XtraCharts.DataFilter("UnitPrice", "System.Decimal", DevExpress.XtraCharts.DataFilterCondition.GreaterThanOrEqual, New Decimal(New Integer() { 10, 0, 0, 0})), New DevExpress.XtraCharts.DataFilter("UnitPrice", "System.Decimal", DevExpress.XtraCharts.DataFilterCondition.LessThanOrEqual, New Decimal(New Integer() { 100, 0, 0, 0}))})
+			series1.DataFilters.ClearAndAddRange(New DevExpress.XtraCharts.DataFilter() {
+				New DevExpress.XtraCharts.DataFilter("UnitPrice", "System.Decimal", DevExpress.XtraCharts.DataFilterCondition.GreaterThanOrEqual, New Decimal(New Integer() { 10, 0, 0, 0})),
+				New DevExpress.XtraCharts.DataFilter("UnitPrice", "System.Decimal", DevExpress.XtraCharts.DataFilterCondition.LessThanOrEqual, New Decimal(New Integer() { 100, 0, 0, 0}))
+			})
 			pointSeriesLabel1.Angle = 90
-			pointSeriesLabel1.LineVisible = True
 			pointSeriesLabel1.ResolveOverlappingMode = DevExpress.XtraCharts.ResolveOverlappingMode.Default
 			series1.Label = pointSeriesLabel1
 			series1.Name = "Series 1"
 			series1.ValueDataMembersSerializable = "UnitPrice"
-			areaSeriesView1.Color = System.Drawing.Color.FromArgb((CInt(Fix((CByte(128))))), (CInt(Fix((CByte(255))))), (CInt(Fix((CByte(128))))))
-			areaSeriesView1.MarkerOptions.Visible = False
+			areaSeriesView1.Color = System.Drawing.Color.FromArgb((CInt((CByte(128)))), (CInt((CByte(255)))), (CInt((CByte(128)))))
 			series1.View = areaSeriesView1
 			Me.chartControl1.SeriesSerializable = New DevExpress.XtraCharts.Series() { series1}
-			sideBySideBarSeriesLabel1.LineVisible = True
 			Me.chartControl1.SeriesTemplate.Label = sideBySideBarSeriesLabel1
 			Me.chartControl1.Size = New System.Drawing.Size(1140, 523)
 			Me.chartControl1.TabIndex = 0
-'			Me.chartControl1.CustomDrawSeriesPoint += New DevExpress.XtraCharts.CustomDrawSeriesPointEventHandler(Me.chartControl1_CustomDrawSeriesPoint);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.chartControl1.CustomDrawSeriesPoint += new DevExpress.XtraCharts.CustomDrawSeriesPointEventHandler(this.chartControl1_CustomDrawSeriesPoint);
 			' 
 			' productsTableAdapter
 			' 
@@ -102,7 +98,8 @@ Namespace CustomLabelsWithaLargeAmountOfData
 			Me.Controls.Add(Me.chartControl1)
 			Me.Name = "Form1"
 			Me.Text = "Form1"
-'			Me.Load += New System.EventHandler(Me.Form1_Load);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.Load += new System.EventHandler(this.Form1_Load);
 			CType(xyDiagram1, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(pointSeriesLabel1, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(areaSeriesView1, System.ComponentModel.ISupportInitialize).EndInit()
