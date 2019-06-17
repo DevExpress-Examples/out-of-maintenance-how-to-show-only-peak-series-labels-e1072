@@ -53,16 +53,13 @@ namespace CustomLabelsWithaLargeAmountOfData
             this.chartControl1.DataAdapter = this.productsTableAdapter;
             this.chartControl1.DataSource = this.productsBindingSource;
             xyDiagram1.AxisX.Label.Angle = 45;
-            xyDiagram1.AxisX.Label.Antialiasing = true;
-            xyDiagram1.AxisX.Range.ScrollingRange.SideMarginsEnabled = false;
-            xyDiagram1.AxisX.Range.SideMarginsEnabled = false;
+            xyDiagram1.AxisX.Label.EnableAntialiasing = DevExpress.Utils.DefaultBoolean.True;
+            xyDiagram1.AxisX.VisualRange.AutoSideMargins = false;
             xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram1.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
-            xyDiagram1.AxisY.Range.SideMarginsEnabled = true;
             xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
             this.chartControl1.Diagram = xyDiagram1;
             this.chartControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartControl1.Legend.Visible = false;
+            this.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControl1.Location = new System.Drawing.Point(0, 0);
             this.chartControl1.Name = "chartControl1";
             series1.ArgumentDataMember = "ProductName";
@@ -78,17 +75,14 @@ namespace CustomLabelsWithaLargeAmountOfData
                             0,
                             0}))});
             pointSeriesLabel1.Angle = 90;
-            pointSeriesLabel1.LineVisible = true;
             pointSeriesLabel1.ResolveOverlappingMode = DevExpress.XtraCharts.ResolveOverlappingMode.Default;
             series1.Label = pointSeriesLabel1;
             series1.Name = "Series 1";
             series1.ValueDataMembersSerializable = "UnitPrice";
             areaSeriesView1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            areaSeriesView1.MarkerOptions.Visible = false;
             series1.View = areaSeriesView1;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
-            sideBySideBarSeriesLabel1.LineVisible = true;
             this.chartControl1.SeriesTemplate.Label = sideBySideBarSeriesLabel1;
             this.chartControl1.Size = new System.Drawing.Size(1140, 523);
             this.chartControl1.TabIndex = 0;
